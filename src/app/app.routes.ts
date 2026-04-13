@@ -11,4 +11,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./folder/folder.page').then((m) => m.FolderPage),
   },
+  {
+    path: 'new-message',
+    loadComponent: () =>
+      import('./new-message/new-message.page').then((m) => m.NewMessagePage),
+  },
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./register/register.page').then((m) => m.RegisterPage),
+  },
 ];

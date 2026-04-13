@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="cancel()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>New Message</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" color="primary" (click)="sendMessage()">
+        <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formRoot]="messageForm">
+    <ion-item>
+      <ion-select
+        placeholder="Select topic"
+        interface="action-sheet"
+        [formField]="messageForm.topic">
+        <ion-select-option value="general">General</ion-select-option>
+        <ion-select-option value="support">Support</ion-select-option>
+        <ion-select-option value="feedback">Feedback</ion-select-option>
+        <ion-select-option value="bug">Bug Report</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+        placeholder="Select recipient"
+        interface="action-sheet"
+        [formField]="messageForm.recipient">
+        <ion-select-option value="user1@example.com">John Doe</ion-select-option>
+        <ion-select-option value="user2@example.com">Jane Smith</ion-select-option>
+        <ion-select-option value="user3@example.com">Bob Johnson</ion-select-option>
+        <ion-select-option value="support@example.com">Support Team</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        placeholder="Enter subject"
+        [formField]="messageForm.subject">
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="message-item">
+      <ion-textarea
+        placeholder="Type your message here..."
+        rows="8"
+        [formField]="messageForm.message">
+      </ion-textarea>
+    </ion-item>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="medium">
+        <ion-icon slot="icon-only" name="attach-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title size="small" color="medium">Add attachment</ion-title>
+  </ion-toolbar>
+</ion-footer>

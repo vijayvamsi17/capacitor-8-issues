@@ -26,3 +26,21 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+
+#inbox-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create-message-btn {
+  margin-bottom: 10px;
+  --border-radius: 12px;
+}
+
+ion-card {
+  margin: 0;
+  --background: var(--ion-card-background, #ffffff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

@@ -3,19 +3,42 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>{{ folder() }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
+      <ion-title size="large">{{ folder() }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  @if (isInbox()) {
+    <div id="inbox-container">
+      <ion-button
+        routerLink="/new-message"
+        fill="solid"
+        color="primary"
+        size="large"
+        class="create-message-btn">
+        <ion-icon slot="start" ios="add-outline" md="add-sharp"></ion-icon>
+        Create New Message
+      </ion-button>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Welcome to your Inbox</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Your messages will appear here. Click the button above to compose a new message.</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  } @else {
+    <div id="container">
+      <strong class="capitalize">{{ folder() }}</strong>
+      <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </div>
+  }
 </ion-content>

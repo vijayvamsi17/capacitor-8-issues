@@ -1,0 +1,83 @@
+ion-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+  flex: 1;
+}
+
+ion-item {
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.message-item {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  height: 100% !important;
+}
+
+.message-item::part(native) {
+  flex: 1 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.message-item ion-textarea {
+  --border-radius: 8px;
+  flex: 1 !important;
+  min-height: auto !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.message-item ion-textarea::part(native) {
+  flex: 1 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.message-item ion-textarea::part(textarea) {
+  flex: 1 !important;
+  height: 100% !important;
+  min-height: 100px !important;
+  resize: none !important;
+}
+
+::ng-deep .textarea-wrapper {
+  height: 100% !important;
+}
+::ng-deep .textarea-wrapper-inner {
+  height: 100% !important;
+}
+
+ion-footer {
+  border-top: 1px solid var(--ion-color-step-150, #d7d8da);
+}
+
+ion-footer ion-toolbar {
+  --background: var(--ion-toolbar-background, var(--ion-background-color, #ffffff));
+}
+
+ion-footer ion-title {
+  text-align: center;
+  font-size: 14px;
+}

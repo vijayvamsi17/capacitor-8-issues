@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formRoot]="registrationForm">
+    <ion-item>
+      <ion-input
+        label="First Name"
+        label-placement="stacked"
+        placeholder="Enter your first name"
+        [formField]="registrationForm.firstName">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Last Name"
+        label-placement="stacked"
+        placeholder="Enter your last name"
+        [formField]="registrationForm.lastName">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Email"
+        label-placement="stacked"
+        type="email"
+        placeholder="Enter your email"
+        [formField]="registrationForm.email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+        label="Country"
+        label-placement="stacked"
+        placeholder="Select your country"
+        interface="action-sheet"
+        [formField]="registrationForm.country">
+        <ion-select-option value="us">United States</ion-select-option>
+        <ion-select-option value="ca">Canada</ion-select-option>
+        <ion-select-option value="uk">United Kingdom</ion-select-option>
+        <ion-select-option value="de">Germany</ion-select-option>
+        <ion-select-option value="fr">France</ion-select-option>
+        <ion-select-option value="jp">Japan</ion-select-option>
+        <ion-select-option value="au">Australia</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Street Address"
+        label-placement="stacked"
+        placeholder="Enter your street address"
+        [formField]="registrationForm.streetAddress">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="City"
+        label-placement="stacked"
+        placeholder="Enter your city"
+        [formField]="registrationForm.city">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="State/Province"
+        label-placement="stacked"
+        placeholder="Enter your state or province"
+        [formField]="registrationForm.stateProvince">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="ZIP/Postal Code"
+        label-placement="stacked"
+        placeholder="Enter your ZIP or postal code"
+        [formField]="registrationForm.zipCode">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-checkbox slot="start" [formField]="registrationForm.agreeToTerms"></ion-checkbox>
+      <ion-label>I agree to the Terms and Conditions</ion-label>
+    </ion-item>
+
+    <div class="button-container">
+      <ion-button expand="block" color="primary" (click)="submitRegistration()">
+        Submit Registration
+      </ion-button>
+      <ion-button expand="block" fill="outline" (click)="cancel()">
+        Cancel
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
