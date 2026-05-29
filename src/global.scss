@@ -35,3 +35,24 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 /* @import '@ionic/angular/css/palettes/dark.system.css'; */
 /* @import '@ionic/angular/css/palettes/light.always.css'; */
+
+/**
+ * Modal Styling
+ * Small, non-fullscreen modals, centered
+ */
+.small-modal::part(content) {
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-modal::part(backdrop) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

@@ -3,5 +3,8 @@
   "integrations": {
     "capacitor": {}
   },
+  "hooks": {
+    "build:after": "./scripts/attach-source-maps.js"
+  },
   "type": "angular-standalone"
 }

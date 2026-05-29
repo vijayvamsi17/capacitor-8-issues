@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Home</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Home</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <!-- Session Control Card -->
+    <ion-card class="session-control-card">
+        <ion-card-header>
+            <ion-card-title>Cobrowse Session Control</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <div class="button-group">
+                <ion-button expand="block" fill="solid" color="primary" (click)="startSession()"
+                    [disabled]="sessionActive()">
+                    Start SDK
+                </ion-button>
+            </div>
+
+            <div class="button-group">
+                <ion-button expand="block" fill="solid" color="danger" (click)="endSdk()"
+                    [disabled]="!sessionActive()">
+                    End SDK
+                </ion-button>
+            </div>
+
+            <div class="button-group">
+                <ion-button expand="block" fill="solid" color="secondary" (click)="generateSessionCode()">
+                    Generate Session Code
+                </ion-button>
+            </div>
+
+            <div class="button-group">
+                <ion-button expand="block" fill="solid" color="warning" (click)="endSession()"
+                    [disabled]="!session()?.isActive">
+                    End Session
+                </ion-button>
+            </div>
+
+            <div class="session-status">
+                <strong>SDK: </strong>
+                <span [style.color]="sessionActive() ? 'green' : 'red'">
+                    {{ sessionActive() ? 'Initialized' : 'Not Initialized' }}
+                </span>
+            </div>
+
+
+            <div class="session-status">
+                <strong>Session: </strong>
+                <span [style.color]="session()?.isActive ? 'green' : 'red'">
+                    {{ session()?.isActive ? 'Active' : 'Inactive' }}
+                </span>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
